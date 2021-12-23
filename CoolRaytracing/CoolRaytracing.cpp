@@ -1,7 +1,6 @@
 #include <iostream>
 #include "CApp.h"
 
-
 int main(int *argc, char *argv[])
 {
     SDL_SetMainReady();
