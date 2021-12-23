@@ -21,6 +21,10 @@ public:
 	//set pixel colour
 	void SetPixel(const int x, const int y, const double red, const double green, const double blue);
 
+	//return dimensions of the image
+	int GetXSize();
+	int GetYSize();
+
 	//return image to display
 	void Display();
 

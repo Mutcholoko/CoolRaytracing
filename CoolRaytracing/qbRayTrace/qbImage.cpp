@@ -110,3 +110,11 @@ Uint32 qbImage::ConvertColor(const double red, const double green, const double 
 	
 	return pixelColor;
 }
+
+int qbImage::GetXSize() {
+	return m_xSize;
+}
+
+int qbImage::GetYSize() {
+	return m_ySize;
+}

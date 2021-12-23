@@ -27,12 +27,18 @@
     <ClCompile Include="qbRayTrace\qbImage.cpp">
       <Filter>Source Files\qbRayTrace</Filter>
     </ClCompile>
+    <ClCompile Include="qbRayTrace\scene.cpp">
+      <Filter>Source Files\qbRayTrace</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CApp.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="qbRayTrace\qbImage.hpp">
+      <Filter>Source Files\qbRayTrace</Filter>
+    </ClInclude>
+    <ClInclude Include="qbRayTrace\scene.hpp">
       <Filter>Source Files\qbRayTrace</Filter>
     </ClInclude>
   </ItemGroup>

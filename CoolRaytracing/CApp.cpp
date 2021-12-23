@@ -18,14 +18,16 @@ bool CApp::OnInit() {
 		//initialize qbImage instance
 		m_image.Initialize(800, 600, pRenderer);
 
+		/*
 		//create color variations
+		//not used anymore, but keeping it here for happiness reasons
 		for (int x = 0; x < 800; ++x) {
 			for (int y = 0; y < 600; ++y) {
 				double red = (static_cast<double>(x) / 800.0) * 255.0;
 				double green = (static_cast<double>(y) / 600.0) * 255.0;
 				m_image.SetPixel(x, y, red, green, 0.0);
 			}
-		}
+		}*/
 	}
 	else {
 		return false;
@@ -62,6 +64,10 @@ void CApp::OnRender() {
 	//set bg to white
 	SDL_SetRenderDrawColor(pRenderer, 255, 255, 255, 255);
 	SDL_RenderClear(pRenderer);
+
+	//Render scene
+	m_scene.Render(m_image);
+
 
 	//display image
 	m_image.Display();

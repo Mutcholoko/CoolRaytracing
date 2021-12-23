@@ -7,6 +7,7 @@
 #define SDL_MAIN_HANDLED
 #include <SDL.h>
 #include "qbRayTrace/qbImage.hpp"
+#include "qbRayTrace/scene.hpp"
 
 class CApp {
 public:
@@ -21,6 +22,9 @@ public:
 private:
 	//instance of qbImage to store the image
 	qbImage m_image;
+
+	//instance of scene class
+	qbRT::Scene m_scene;
 
 	//SDL STUFF
 	bool isRunning;
