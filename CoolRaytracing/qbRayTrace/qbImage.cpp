@@ -5,6 +5,7 @@ qbImage::qbImage() {
 	m_xSize = 0;
 	m_ySize = 0;
 	m_pTexture = NULL;
+	m_pRenderer = NULL;
 }
 
 qbImage::~qbImage() {
@@ -16,9 +17,9 @@ qbImage::~qbImage() {
 //initializa
 void qbImage::Initialize(const int xSize, const int ySize, SDL_Renderer* pRenderer) {
 	//resize image arrays
-	m_rChannel.resize(xSize, std::vector<double>(ySize, 0.0));
-	m_gChannel.resize(xSize, std::vector<double>(ySize, 0.0));
-	m_bChannel.resize(xSize, std::vector<double>(ySize, 0.0));
+	m_rChannel.resize(xSize, std::vector<double>(ySize, 0));
+	m_gChannel.resize(xSize, std::vector<double>(ySize, 0));
+	m_bChannel.resize(xSize, std::vector<double>(ySize, 0));
 
 	//store dimensions
 	m_xSize = xSize;
@@ -48,7 +49,7 @@ void qbImage::Display() {
 
 	for (int x = 0; x < m_xSize; ++x) {
 		for (int y = 0; y < m_ySize; ++y) {
-			tempPixels[(y * m_ySize) + x] = ConvertColor(m_rChannel.at(x).at(y), m_gChannel.at(x).at(y), m_bChannel.at(x).at(y));
+			tempPixels[(y * m_xSize) + x] = ConvertColor(m_rChannel.at(x).at(y), m_gChannel.at(x).at(y), m_bChannel.at(x).at(y));
 		}
 	}
 
