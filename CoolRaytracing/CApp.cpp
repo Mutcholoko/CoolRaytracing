@@ -1,4 +1,5 @@
 #include "CApp.h"
+#include "qbVector.h"
 
 // default constructor
 CApp::CApp() {
@@ -28,6 +29,29 @@ bool CApp::OnInit() {
 				m_image.SetPixel(x, y, red, green, 0.0);
 			}
 		}*/
+
+		//Test camera
+		RT::Camera testCam;
+		testCam.SetPos(qbVector<double>(std::vector<double>{0.0, 0.0, 0.0}));
+		testCam.LookAt(qbVector<double>(std::vector<double>{0.0, 2.0, 0.0}));
+		testCam.SetUpVect(qbVector<double>(std::vector<double>{0.0, 0.0, 1.0}));
+		testCam.setLength(1.0);
+		testCam.setHorSize(1.0);
+		testCam.setAspect(1.0);
+		testCam.UpdateCameraGeometry();
+
+		//get screen center and U,V vectors to display
+		auto screenCenter = testCam.GetScreenCenter();
+		auto screenU = testCam.GetU();
+		auto screenV = testCam.GetV();
+
+		//display on terminal
+		std::cout << "Camera Screen Center: " << std::endl;
+		PrintVector(screenCenter);
+		std::cout << "\nCamera U Vector: " << std::endl;
+		PrintVector(screenU);
+		std::cout << "\nCamera V Vector: " << std::endl;
+		PrintVector(screenV);
 	}
 	else {
 		return false;
@@ -80,4 +104,11 @@ void CApp::OnExit() {
 	SDL_DestroyWindow(pWindow);
 	pWindow = NULL;
 	SDL_Quit();
+}
+
+void CApp::PrintVector(const qbVector<double>& inputVector) {
+	int n = inputVector.GetNumDims();
+	for (int i = 0; i < n; i++) {
+		std::cout << std::fixed << std::setprecision(3) << inputVector.GetElement(i) << std::endl;
+	}
 }

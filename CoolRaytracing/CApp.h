@@ -8,6 +8,7 @@
 #include <SDL.h>
 #include "qbRayTrace/qbImage.hpp"
 #include "qbRayTrace/scene.hpp"
+#include "camera.hpp"
 
 class CApp {
 public:
@@ -18,6 +19,9 @@ public:
 	void OnLoop();
 	void OnRender();
 	void OnExit();
+
+private:
+	void PrintVector(const qbVector<double>& inputVector);
 
 private:
 	//instance of qbImage to store the image
