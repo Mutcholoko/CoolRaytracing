@@ -16,6 +16,9 @@
     <Filter Include="Source Files\qbRayTrace">
       <UniqueIdentifier>{2d7e405f-7f18-41f9-9059-f7491163f47c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\qbLinAlg">
+      <UniqueIdentifier>{d4652c1e-e33d-4979-a771-bceb160e0af8}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CoolRaytracing.cpp">
@@ -30,6 +33,12 @@
     <ClCompile Include="qbRayTrace\scene.cpp">
       <Filter>Source Files\qbRayTrace</Filter>
     </ClCompile>
+    <ClCompile Include="ray.cpp">
+      <Filter>Source Files\qbRayTrace</Filter>
+    </ClCompile>
+    <ClCompile Include="camera.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CApp.h">
@@ -40,6 +49,15 @@
     </ClInclude>
     <ClInclude Include="qbRayTrace\scene.hpp">
       <Filter>Source Files\qbRayTrace</Filter>
+    </ClInclude>
+    <ClInclude Include="qbVector.h">
+      <Filter>Source Files\qbLinAlg</Filter>
+    </ClInclude>
+    <ClInclude Include="ray.h">
+      <Filter>Source Files\qbRayTrace</Filter>
+    </ClInclude>
+    <ClInclude Include="camera.hpp">
+      <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

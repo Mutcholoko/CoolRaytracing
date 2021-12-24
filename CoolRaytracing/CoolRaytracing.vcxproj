@@ -145,15 +145,20 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="camera.cpp" />
     <ClCompile Include="CApp.cpp" />
     <ClCompile Include="CoolRaytracing.cpp" />
     <ClCompile Include="qbRayTrace\qbImage.cpp" />
     <ClCompile Include="qbRayTrace\scene.cpp" />
+    <ClCompile Include="ray.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="camera.hpp" />
     <ClInclude Include="CApp.h" />
     <ClInclude Include="qbRayTrace\qbImage.hpp" />
     <ClInclude Include="qbRayTrace\scene.hpp" />
+    <ClInclude Include="qbVector.h" />
+    <ClInclude Include="ray.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
