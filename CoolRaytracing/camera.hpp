@@ -4,7 +4,7 @@
 #define CAMERA_H
 
 #include "qbVector.h"
-#include "ray.h"
+#include "ray.hpp"
 
 namespace RT {
 	class Camera {
@@ -38,17 +38,17 @@ namespace RT {
 		void UpdateCameraGeometry();
 
 	private:
-		qbVector<double> m_CameraPos(3);
-		qbVector<double> m_CameraLookAt(3);
-		qbVector<double> m_CameraUp(3);
+		qbVector<double> m_CameraPos{ 3 };
+		qbVector<double> m_CameraLookAt{ 3 };
+		qbVector<double> m_CameraUp{ 3 };
 		double m_CameraLength;
 		double m_CameraHorSize;
 		double m_CameraAspectRatio;
 
-		qbVector<double> m_AlignmentVector(3);
-		qbVector<double> m_ProjectionScreenU(3);
-		qbVector<double> m_ProjectionScreenV(3);
-		qbVector<double> m_ProjectionScreenCenter(3);
+		qbVector<double> m_AlignmentVector{ 3 };
+		qbVector<double> m_ProjectionScreenU{ 3 };
+		qbVector<double> m_ProjectionScreenV{ 3 };
+		qbVector<double> m_ProjectionScreenCenter{ 3 };
 	};
 }
 

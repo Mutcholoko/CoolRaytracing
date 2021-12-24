@@ -1,4 +1,4 @@
-#include "ray.h"
+#include "ray.hpp"
 
 RT::Ray::Ray(const qbVector<double> &point1, const qbVector<double> &point2) {
 	m_point1 = point1;

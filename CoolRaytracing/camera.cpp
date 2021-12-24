@@ -1,5 +1,5 @@
 #include "camera.hpp"
-#include "ray.h"
+#include "ray.hpp"
 #include <math.h>
 
 RT::Camera::Camera() {
@@ -89,4 +89,23 @@ void RT::Camera::UpdateCameraGeometry() {
 
 	//compute U & V vectors
 	m_ProjectionScreenU = qbVector<double>::cross(m_AlignmentVector, m_CameraUp);
+	m_ProjectionScreenU.Normalize();
+	m_ProjectionScreenV = qbVector<double>::cross(m_ProjectionScreenU, m_AlignmentVector);
+	m_ProjectionScreenV.Normalize();
+
+	//compute position of center point in screen
+	m_ProjectionScreenCenter = m_CameraPos + (m_CameraLength * m_AlignmentVector);
+
+	//modify U & V vectors to match aspect ratio
+	m_ProjectionScreenU = m_ProjectionScreenU * m_CameraHorSize;
+	m_ProjectionScreenV = m_ProjectionScreenV * (m_CameraHorSize / m_CameraAspectRatio);
+}
+
+RT::Ray RT::Camera::GenerateRay(float projecScreenX, float projecScreenY) {
+	//compute location of screen point in world coords
+	qbVector<double> screenWorldPart1 = m_ProjectionScreenCenter + (m_ProjectionScreenU * projecScreenX);
+	qbVector<double> screenWorldCoord = screenWorldPart1 + (m_ProjectionScreenV * projecScreenY);
+
+	//compute the ray using the camera position
+	return RT::Ray(m_CameraPos, screenWorldCoord);
 }

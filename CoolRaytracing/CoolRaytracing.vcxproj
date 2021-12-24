@@ -158,7 +158,7 @@
     <ClInclude Include="qbRayTrace\qbImage.hpp" />
     <ClInclude Include="qbRayTrace\scene.hpp" />
     <ClInclude Include="qbVector.h" />
-    <ClInclude Include="ray.h" />
+    <ClInclude Include="ray.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
